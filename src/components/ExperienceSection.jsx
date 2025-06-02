@@ -91,36 +91,52 @@ const ExperienceSection = () => {
   const timelineItems = [
     {
       type: "work",
-      title: "Senior Frontend Developer",
-      date: "Jan 2022 - Present",
+      title: "Frontend Developer",
+      date: "Feb 2024 - Present",
       description:
         "Led development of responsive web applications using React and TypeScript.",
-      tags: ["React", "TypeScript", "Redux", "Tailwind CSS"],
+      tags: [
+        "React",
+        "TypeScript",
+        "Redux",
+        "Material UI",
+        "Chakra UI",
+        "Next.js",
+        "Tailwind CSS",
+        "Figma",
+        "Git/GitHub",
+        "Docker",
+        "Blender",
+        "Wordpress",
+        "VS Code",
+        "RTK Query",
+        "Redux Toolkit",
+      ],
     },
     {
       type: "education",
-      title: "MSc Computer Science",
-      date: "Sep 2019 - Dec 2021",
+      title: "Bachelor of Computer Science",
+      date: "Oct 2018 - Sep 2022",
       description:
-        "Specialized in human-computer interaction and web technologies.",
-      tags: ["HCI", "WebGL", "UX Research"],
+        "Graduated with honors, receiving a Bachelor of Computer Science degree from Unity University.",
+      tags: ["Computer Science", "Unity University", "Honors"],
     },
     {
       type: "project",
-      title: "E-commerce Platform",
-      date: "Mar 2021",
+      title: "First MERN Project",
+      date: "Feb 2024",
       description:
-        "Built a full-featured online store with payment integration and inventory management.",
-      tags: ["React", "Node.js", "Stripe", "MongoDB"],
+        "A simple MERN stack project. Built with React, Node.js, Chakra UI, and MongoDB that does basic CRUD operations.",
+      tags: ["React", "Node.js", "Chakra UI", "MongoDB", "Express"],
     },
-    {
-      type: "achievement",
-      title: "Best UI Design Award",
-      date: "Nov 2020",
-      description:
-        "Received industry recognition for innovative dashboard interface design.",
-      tags: ["UI Design", "Figma", "Prototyping"],
-    },
+    // {
+    //   type: "achievement",
+    //   title: "Best UI Design Award",
+    //   date: "Nov 2020",
+    //   description:
+    //     "Received industry recognition for innovative dashboard interface design.",
+    //   tags: ["UI Design", "Figma", "Prototyping"],
+    // },
   ];
 
   return (
