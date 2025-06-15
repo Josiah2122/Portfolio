@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Company Website",
+    title: "Meselal Company Website",
     description: "A dental clinic website built with WordPress.",
     image: "/projects/home.png",
     tags: ["Wordpress"],
