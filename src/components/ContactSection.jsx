@@ -10,66 +10,57 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  //   const handleSubmit = async (e) => {
+  // const handleSubmit = (e) => {
   //   e.preventDefault();
+
   //   setIsSubmitting(true);
 
-  //   const formData = new FormData(e.target);
-  //   const data = {
-  //     name: formData.get('name'),
-  //     email: formData.get('email'),
-  //     message: formData.get('message')
-  //   };
-
-  //   try {
-  //     // You'll need to replace this with your actual email sending logic
-  //     const response = await fetch('/api/send-email', { // or your email service endpoint
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-
-  //     if (response.ok) {
-  //       toast({
-  //         title: "Message sent!",
-  //         description: "Thank you for your message. I'll get back to you soon.",
-  //       });
-  //       e.target.reset(); // Reset the form
-  //     } else {
-  //       throw new Error('Failed to send message');
-  //     }
-  //   } catch (error) {
+  //   setTimeout(() => {
   //     toast({
-  //       title: "Error",
-  //       description: "There was an error sending your message. Please try again later.",
-  //       variant: "destructive",
+  //       title: "Message sent!",
+  //       description: "Thank you for your message. I'll get back to you soon.",
   //     });
-  //   } finally {
   //     setIsSubmitting(false);
-  //   }
+  //   }, 1500);
   // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm("service_6q2namr", "template_3cl0cgv", form.current, {
+        publicKey: "3qRjXYMIv-4fehv2m",
+      })
+      .then(
+        () => {
+          // console.log('SUCCESS!');
+          toast({
+            title: "Message sent!",
+            description:
+              "Thank you for your message. I'll get back to you soon.",
+          });
+          form.current.reset();
+          setIsSubmitting(false);
+        },
+        (error) => {
+          // console.log('FAILED...', error.text);
+          toast({
+            title: "Failed!",
+            description: `Error: ${error.text}`,
+          });
+          setIsSubmitting(false);
+        }
+      );
+  };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -160,7 +151,7 @@ export const ContactSection = () => {
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -175,7 +166,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Eyosyas Fetene"
+                  placeholder="John Doe"
                 />
               </div>
 

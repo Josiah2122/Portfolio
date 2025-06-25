@@ -22,7 +22,7 @@ const projects = [
   {
     id: 3,
     title: "Meselal Company Website",
-    description: "A company clinic website built with WordPress.",
+    description: "A company website built with WordPress.",
     image: "/projects/home.png",
     tags: ["Wordpress"],
     demoUrl: "https://meselaltech.com/",
