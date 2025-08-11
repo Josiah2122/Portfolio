@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Briefcase, Code, Gamepad2, User } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -16,12 +16,13 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              I’m a Computer Science graduate from Unity University with a
-              passion for crafting intuitive user interfaces and scalable
-              back-end systems using React, Node.js, and MongoDB. Over the past
-              year, I’ve designed and launched projects ranging from MERN-stack
-              applications to custom WordPress sites while always focusing on
-              clean code, responsive layouts, and accessibility.
+              Hi, I’m Eyosyas Fetene — a Computer Science graduate from Unity
+              University and a front-end developer with nearly two years of
+              experience at Meselal Technologies. I specialize in building
+              clean, scalable web interfaces and have worked on large systems
+              for HR, restaurant, procurement, office, and sales management. I
+              also enjoy 3D modeling in Blender, exploring game development, and
+              diving into creative challenges whenever I can.
             </p>
 
             <p className="text-muted-foreground">
@@ -38,7 +39,8 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="/cv.pdf"
+                download="Eyosyas_Fetene_CV.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
@@ -78,7 +80,7 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
+                  <Gamepad2 className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">

@@ -37,22 +37,34 @@ const TimelineItem = ({ item, index }) => {
     <div
       ref={itemRef}
       className={`flex w-full transition-all duration-700 ease-in-out transform opacity-0 ${
-        index % 2 === 0 ? "justify-start" : "justify-end"
+        index % 2 === 0
+          ? "md:justify-start justify-end"
+          : "md:justify-end justify-end"
       }`}
       style={{
         transform: "translateY(20px)",
         transitionDelay: `${index * 100}ms`,
       }}
     >
+      {/* Mobile: Timeline icon on left */}
+      <div className="md:hidden absolute left-0 transform -translate-x-1/2">
+        <div className="z-10 flex items-center justify-center w-10 h-10 rounded-full bg-primary border-4 border-card shadow-lg">
+          <Icon className="text-primary-foreground" size={16} />
+        </div>
+      </div>
+
       {/* Timeline Card */}
       <div
-        className={`w-[calc(50%-24px)] px-6 py-4 ${
-          index % 2 === 0 ? "text-right" : "text-left"
-        }`}
+        className={`w-full md:w-[calc(50%-24px)] px-6 py-4 ${
+          index % 2 === 0 ? "md:text-right" : "md:text-left"
+        } text-left`}
       >
-        <div className="bg-card border-border p-6 rounded-xl shadow-lg border">
+        <div className="bg-card border-border p-6 rounded-xl shadow-lg border md:ml-0 ml-8">
           <div className="flex items-center mb-2">
-            <Icon className="text-primary mr-2" size={18} />
+            <Icon
+              className="text-primary mr-2 hidden md:inline-block"
+              size={18}
+            />
             <span className="text-xs font-semibold uppercase tracking-wide text-primary">
               {item.type}
             </span>
@@ -75,8 +87,8 @@ const TimelineItem = ({ item, index }) => {
         </div>
       </div>
 
-      {/* Timeline Icon - Positioned in the center */}
-      <div className="absolute left-1/2 transform -translate-x-1/2">
+      {/* Desktop: Timeline icon in center */}
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
         <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary border-4 border-card shadow-lg">
           <Icon className="text-primary-foreground" size={18} />
         </div>
@@ -140,21 +152,25 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 relative">
+    <section id="experience" className="py-16 md:py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Professional <span className="text-primary">Journey</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          My career progression, education, and significant milestones.
+        <p className="text-center text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto">
+          My career progression, education, and significant milestones over the
+          years.
         </p>
 
-        <div className="relative py-12" ref={timelineRef}>
-          {/* Single Center Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2"></div>
+        <div className="relative py-8 md:py-12" ref={timelineRef}>
+          {/* Center Line - Desktop */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2"></div>
 
-          <div className="space-y-16 relative">
+          {/* Left Line - Mobile */}
+          <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2"></div>
+
+          <div className="space-y-8 md:space-y-16 relative">
             {timelineItems.map((item, index) => (
               <div key={index} className="relative">
                 <TimelineItem item={item} index={index} />

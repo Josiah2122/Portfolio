@@ -20,7 +20,9 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <h1>Front-End & Full-Stack Developer</h1>
+          <h1 className="text-1xl md:text-2xl">
+            Front-End & Full-Stack Developer
+          </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             I build engaging, responsive web interfaces that blend thoughtful
