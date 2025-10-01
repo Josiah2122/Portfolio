@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Download, ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +11,7 @@ const projects = [
     tags: ["React", "Express", "Node.js", "Chakra UI", "MongoDB"],
     demoUrl: "https://mern-crash-course-z27s.onrender.com/",
     githubUrl: "https://github.com/Josiah2122/MERN-crash-course",
-    category: "self",
+    category: "Self",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const projects = [
     tags: ["Wordpress"],
     demoUrl: "https://wisdomaddis.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projects = [
     tags: ["Wordpress"],
     demoUrl: "https://meselaltech.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const projects = [
     ],
     demoUrl: "https://property.meselaltech.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ const projects = [
     ],
     demoUrl: "https://sales.meselaltech.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
   },
   {
     id: 6,
@@ -93,7 +93,7 @@ const projects = [
     ],
     demoUrl: "https://hr.meselaltech.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
   },
   {
     id: 7,
@@ -113,14 +113,134 @@ const projects = [
     ],
     demoUrl: "https://office.meselaltech.com/",
     // githubUrl: "#",
-    category: "meselal",
+    category: "Meselal",
+  },
+  {
+    id: 8,
+    title: "ToDo List",
+    description:
+      "A simple Todo List application built with Android Studio for an assignment in my 4th year at Unity University. The app allows users to create, read, update, and delete tasks. It also features a user-friendly interface with a list view, floating action button, and a navigation drawer. The app utilizes SQLite for data storage and follows the MVC architecture pattern.",
+    image: "/projects/ToDoCrop.jpg",
+    tags: ["Android Studio"],
+    downloadLink: "/ToDo.apk",
+    downloadName: "ToDo.apk",
+    category: "Application Development",
+  },
+  {
+    id: 9,
+    title: "Donut Project",
+    description:
+      "This was my first Blender project, and I'm grateful to Blender Guru on YouTube for guiding me through it. I learned a lot from this project, from setting up a scene to rendering a final image. It was a great starting point for my Blender journey, and I'm proud of how far I've come since then.",
+    video: "/projects/Donut.mp4",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 10,
+    title: "Dodge Model",
+    description:
+      "I created this car model using references from images and following a tutorial. Although it's still incomplete, I managed to complete the body of the car. I'm excited to continue working on it and add more details in the future.",
+    image: "/projects/Dodge Render.PNG",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 11,
+    title: "Couch",
+    description:
+      "A simple couch model created using Blender. I followed a tutorial to create the couch from scratch, learning how to create and manipulate shapes, add materials and textures, and use lighting to enhance the model's appearance.",
+    image: "/projects/Couch.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 12,
+    title: "Environment Modeling",
+    description:
+      "I created an interesting environment using Blender and basic shapes. I started by creating a plane to act as the ground, and then added a few basic shapes such as spheres, cylinders, and cones to create some interesting features. ",
+    image: "/projects/Environment.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 13,
+    title: "Hard Surface Modeling",
+    description:
+      "I used this project to learn about hard surface modeling in Blender. I learned that good topology is essential for creating clean models, and that it matters for a variety of reasons such as rendering, physics, and animation. I also learned how to use the knife tool to cut through objects and create clean edges, and much more.",
+    image: "/projects/HardSurface.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 14,
+    title: "Low Poly Modeling",
+    description:
+      "In this project, I learned how to create low poly models in Blender. I started by creating a high poly model and then used the decimate tool to reduce the number of polygons. I also learned how to use the remesh tool to create a clean and organized model.",
+    image: "/projects/LowPoly.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 15,
+    title: "Room",
+    description:
+      "What I learned from this project is that you don't need already made assets to create a good render such as this. You can use the tools already in Blender, such as its built-in textures and shaders, to create a great looking render. Additionally, lighting matters a lot and using multiple light sources can greatly enhance the mood and atmosphere of your render.",
+    image: "/projects/roomfinalrender.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 16,
+    title: "Sword",
+    description:
+      "In this project, I followed a tutorial from YouTube CG Fast Track. I learned how to create a visually appealing scene by combining different elements such as lighting, textures, and objects. I also learned how to use the various tools in Blender to create a cohesive and balanced composition. This project helped me to understand the importance of composition in 3D modeling and how it can enhance the overall look and feel of a render. ",
+    image: "/projects/Sword.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 17,
+    title: "Bush",
+    description:
+      "In this project, I learned how to create a simple bush using images and textures in Blender. I followed a tutorial and applied the techniques I learned to create a visually appealing bush model. I'm proud of how it turned out and can't wait to keep learning and improving my skills.",
+    image: "/projects/bush.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 18,
+    title: "Well",
+    description:
+      "A low poly well created using simple shapes in Blender. This project was a great exercise in learning how to create visually appealing models using basic shapes and techniques.",
+    image: "/projects/well.png",
+    tags: ["Blender"],
+    category: "Blender",
+  },
+  {
+    id: 19,
+    title: "Knight Game",
+    description:
+      "A low poly well created using simple shapes in Blender. This project was a great exercise in learning how to create visually appealing models using basic shapes and techniques.",
+    // image: "/projects/well.png",
+    video: "/projects/Knight.mp4",
+    tags: ["Godot", "GD Script"],
+    downloadLink: "/Knight.exe",
+    downloadName: "Knight.exe",
+    category: "Godot",
   },
 ];
 
-const categories = ["all", "meselal", "self"];
+const categories = [
+  "All",
+  "Meselal",
+  "Self",
+  "Application Development",
+  "Blender",
+  "Godot",
+];
 
 export const ProjectsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("All");
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -155,7 +275,7 @@ export const ProjectsSection = () => {
           {projects
             .filter(
               (project) =>
-                activeCategory === "all" || project.category === activeCategory
+                activeCategory === "All" || project.category === activeCategory
             )
             .map((project, key) => (
               <div
@@ -163,11 +283,25 @@ export const ProjectsSection = () => {
                 className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
               >
                 <div className="h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : project.video ? (
+                    <video
+                      src={project.video}
+                      controls
+                      className="w-full h-full object-cover"
+                      poster={project.poster || undefined}
+                      autoPlay={true}
+                      muted={true}
+                      playsInline={true}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : null}
                 </div>
 
                 <div className="p-6">
@@ -191,13 +325,15 @@ export const ProjectsSection = () => {
                   </p>
                   <div className="flex justify-between items-center">
                     <div className="flex space-x-3">
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
@@ -205,6 +341,15 @@ export const ProjectsSection = () => {
                           className="text-foreground/80 hover:text-primary transition-colors duration-300"
                         >
                           <Github size={20} />
+                        </a>
+                      )}
+                      {project.downloadLink && (
+                        <a
+                          href={project.downloadLink}
+                          download={project.downloadName}
+                          className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                        >
+                          <Download size={20} />
                         </a>
                       )}
                     </div>
