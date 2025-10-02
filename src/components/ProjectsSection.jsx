@@ -36,6 +36,17 @@ const projects = [
     category: "Meselal",
   },
   {
+    id: 20,
+    title: "Av Construction and Engineering",
+    description:
+      "The official hub for Meselal Tech, highlighting IT solutions, web development, and digital services. Explore their portfolio, client testimonials, and expertise in delivering tailored technology innovations.",
+    image: "/projects/Av.png",
+    tags: ["Wordpress"],
+    demoUrl: "https://av.meselaltech.com/",
+    // githubUrl: "#",
+    category: "Meselal",
+  },
+  {
     id: 4,
     title: "Property and Procurement Management",
     description:
