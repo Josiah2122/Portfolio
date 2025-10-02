@@ -39,7 +39,7 @@ const projects = [
     id: 20,
     title: "Av Construction and Engineering",
     description:
-      "The official hub for Meselal Tech, highlighting IT solutions, web development, and digital services. Explore their portfolio, client testimonials, and expertise in delivering tailored technology innovations.",
+      "A custom WordPress website for AV Construction and Engineering, showcasing their services, projects, and expertise in the construction industry. The website features a modern design, easy navigation, and a responsive layout for optimal user experience on various devices.",
     image: "/projects/Av.png",
     tags: ["Wordpress"],
     demoUrl: "https://av.meselaltech.com/",
